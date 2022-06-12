@@ -2,10 +2,14 @@
 
 This is a Wireshark protocol parser written in Lua for the SuperFunkyChat program.
 
-In the book *Attacking Network Protocols*, James Forshaw writes the UDP version of the parser, however, this implementation is for TCP.
+The chat application can be found here: https://github.com/tyranid/ExampleChatApplication/releases/
 
-The TCP version is slightly more difficult due to the fact that you must account for split or multiple packets which requires some conditional logic to parse the data correctly.
+In the book *Attacking Network Protocols*, James Forshaw writes the UDP version of the parser, however, my implementation is for TCP.
+
+The TCP version is slightly more difficult because you must account for multiple packets that make up the entire exchange of data i.e. the checksum, command id, data, etc. The modified script contains additional logic to parse these parameters.
 
 Below is an example of how the parsed protocol looks in Wireshark.
 
 ![Screenshot](images/wireshark.png)
+
+*TODO:* Add logic to account for all the different command IDs and data parameters.
